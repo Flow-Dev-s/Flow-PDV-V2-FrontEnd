@@ -2,7 +2,10 @@ import { useState, useEffect} from 'react';
 import axios from 'axios'
 import { History, Trash2, Search, X, Receipt, User, CreditCard, DollarSign, Package, Eye, Pencil } from 'lucide-react'
 import type { Sale } from '../types.ts'
+<<<<<<< HEAD
 import { getApiUrl } from '../config';
+=======
+>>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
 
 interface SalesHistoryProps {
   currentUser: { name: string, role: string, username: string } | null;
@@ -18,14 +21,22 @@ export function SaleHistory({ currentUser }: SalesHistoryProps) {
   const [viewingSale, setViewingSale] = useState<any | null>(null);
 
   useEffect(() => {
+<<<<<<< HEAD
     axios.get(`${getApiUrl()}/api/sales`)
+=======
+    axios.get('http://localhost:8080/api/sales')
+>>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
       .then(response => setSales(response.data))
       .catch(error => console.error("Erro ao buscar histórico:", error))
   }, [])
 
   const fetchProductsList = async () => {
     try {
+<<<<<<< HEAD
       const response = await fetch(`${getApiUrl()}/api/products`);
+=======
+      const response = await fetch('http://localhost:8080/api/products');
+>>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
       if (!response.ok) throw new Error('Falha ao buscar produtos');
       const data = await response.json();
       setProducts(data);
@@ -45,12 +56,20 @@ const handleCancelCompletedSale = async () => {
     }
 
     try {
+<<<<<<< HEAD
       const response = await fetch(`${getApiUrl()}/api/sales/${editingSale.id}`, {
+=======
+      const response = await fetch(`http://localhost:8080/api/sales/${editingSale.id}`, {
+>>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
         method: 'DELETE'
       });
 
       if (response.ok) {
+<<<<<<< HEAD
         await fetch(`${getApiUrl()}/api/audit`, {
+=======
+        await fetch('http://localhost:8080/api/audit', {
+>>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -124,7 +143,11 @@ const handleSaveSaleEdit = async () => {
     
       };
       
+<<<<<<< HEAD
       const response = await fetch(`${getApiUrl()}/api/sales/${editingSale.id}?adminName=${currentUser?.name}&adminUsername=${currentUser?.username}`, {
+=======
+      const response = await fetch(`http://localhost:8080/api/sales/${editingSale.id}?adminName=${currentUser?.name}&adminUsername=${currentUser?.username}`, {
+>>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedSale)

@@ -3,8 +3,11 @@ import { ClipboardList, Filter, Search, User, Loader2,
          Activity, CalendarDays, Users
  } from 'lucide-react'
 
+<<<<<<< HEAD
 import {getApiUrl} from '../config.ts'
 
+=======
+>>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
 export function AuditReports() {
   const [timeFilter, setTimeFilter] = useState('Hoje');
   const [userFilter, setUserFilter] = useState('Todos os usuários');
@@ -15,7 +18,11 @@ export function AuditReports() {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
+<<<<<<< HEAD
         const response = await fetch(`${getApiUrl()}/api/audit`);
+=======
+        const response = await fetch('http://localhost:8080/api/audit');
+>>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
         if (!response.ok) throw new Error('Falha ao buscar auditoria');
         
         const data = await response.json();
