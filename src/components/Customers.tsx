@@ -6,11 +6,7 @@ import { Users, UserPlus, Phone, Mail, MapPin, X, Save, CreditCard, Search, Eye,
 
 import QRCode from 'react-qr-code';
 import { gerarCopiaEColaPix } from '../pix/PixUtils';
-<<<<<<< HEAD
 import { getApiUrl } from '../config';
-=======
-
->>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
 interface CustomersProps {
   currentUser: { name: string, role: string } | null;
 }
@@ -41,11 +37,7 @@ export function Customers({currentUser} : CustomersProps) {
   const fetchCustomers = async () => {
     try {
 
-<<<<<<< HEAD
       const response = await fetch(`${getApiUrl()}/api/customers`);
-=======
-      const response = await fetch('http://localhost:8080/api/customers');
->>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
       if (response.ok) {
         const data = await response.json();
         setCustomers(data);
@@ -83,11 +75,7 @@ export function Customers({currentUser} : CustomersProps) {
     };
 
     try {
-<<<<<<< HEAD
       const response = await fetch(`${getApiUrl()}/api/customers/${viewingCustomer.id}`, {
-=======
-      const response = await fetch(`http://localhost:8080/api/customers/${viewingCustomer.id}`, {
->>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedCustomer)
@@ -126,11 +114,7 @@ export function Customers({currentUser} : CustomersProps) {
     e.preventDefault();
     setIsSaving(true);
     try {
-<<<<<<< HEAD
       const response = await fetch(`${getApiUrl()}/api/customers/${editingCustomer.id}`, {
-=======
-      const response = await fetch(`http://localhost:8080/api/customers/${editingCustomer.id}`, {
->>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editingCustomer)
@@ -168,11 +152,7 @@ export function Customers({currentUser} : CustomersProps) {
     setViewingCustomer(customer);
     setCustomerSales([]);
     try {
-<<<<<<< HEAD
       const response = await fetch(`${getApiUrl()}/api/sales/customer?name=${encodeURIComponent(customer.name)}`);
-=======
-      const response = await fetch(`http://localhost:8080/api/sales/customer?name=${encodeURIComponent(customer.name)}`);
->>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
       if (response.ok) {
         const data = await response.json();
         setCustomerSales(data);
@@ -185,11 +165,7 @@ export function Customers({currentUser} : CustomersProps) {
   const handleSaveCustomer = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-<<<<<<< HEAD
       const response = await fetch(`${getApiUrl()}/api/customers`, {
-=======
-      const response = await fetch('http://localhost:8080/api/customers', {
->>>>>>> 62b8baff2cf4a74c24db37a97a8492d6a6f474a5
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newCustomer)
