@@ -33,9 +33,9 @@ Interface moderna, rápida e responsiva para operação de Caixa e Ponto de Vend
    ```
 4. Inicie o servidor de desenvolvimento:
 
-```Bash
-npm run dev
-# ou
-yarn start
-O sistema abrirá no seu navegador (geralmente em http://localhost:5173 ou 3000).
-```
+  ```Bash
+  npm run dev
+  # ou
+  yarn start
+  O sistema abrirá no seu navegador (geralmente em http://localhost:5173 ou 3000).
+  ```
