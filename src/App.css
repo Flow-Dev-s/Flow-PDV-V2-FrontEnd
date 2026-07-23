@@ -1,0 +1,18 @@
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #cupom-impresso, #cupom-impresso * {
+    visibility: visible;
+  }
+  #cupom-impresso {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-family: monospace; 
+  }
+}
