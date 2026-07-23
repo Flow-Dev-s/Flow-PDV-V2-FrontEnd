@@ -7,7 +7,6 @@ export interface Product {
   category: string;
   currentStock: number;
   barcode: string;
-  categort: {id: number}
 }
 
 export interface CartItem {
