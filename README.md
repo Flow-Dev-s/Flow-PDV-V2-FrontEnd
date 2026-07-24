@@ -39,3 +39,7 @@ Interface moderna, rápida e responsiva para operação de Caixa e Ponto de Vend
   yarn start
   O sistema abrirá no seu navegador (geralmente em http://localhost:5173 ou 3000).
   ```
+5. Gere a Imagem:
+   ```Bash
+   npm run electron:build
+   ```
