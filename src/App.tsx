@@ -107,7 +107,7 @@ function App() {
     
     if (!window.confirm('Deseja realmente cancelar esta venda em andamento?')) return;
     try {
-      await fetch('${getApiUrl()}/api/audit', {
+      await fetch(`${getApiUrl()}/api/audit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -190,7 +190,7 @@ if (!currentUser) {
       onLogout={async () => {
 
     try {
-          await fetch('${getApiUrl()}/api/audit', {
+          await fetch(`${getApiUrl()}/api/audit`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
